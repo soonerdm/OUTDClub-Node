@@ -1,0 +1,20 @@
+@layout('layouts.main')
+
+@section('title')
+  Oklahoma Touchdown Club
+@endsection
+
+@section('content')
+<div class="blank">
+  <hi>Welcome to the Oklahoma Touchdown Club</hi>
+
+@each(entry in entries)
+  {{entry.page_name}}<br>
+  {{entry.page_body}}
+
+
+@endeach
+
+
+@endsection
+</div>
