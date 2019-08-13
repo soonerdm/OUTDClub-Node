@@ -1,0 +1,34 @@
+@layout('layouts.main')
+
+@section('title')
+Oklahoma Touchdown Club - Admin Login
+@endsection
+
+@section('content')
+<div class="blank">
+  <hi>Welcome to the Oklahoma Touchdown Club</hi>
+    <form action="{{ route('AdminController.login')}}" method="POST">
+      <div class="form-group">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="username" value="{{ old('username', '')}}" class="form-control">
+      @if(hasErrorFor('username'))
+        <span>
+          {{ getErrorFor('username') }}
+        </span>
+      @endif
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" value="{{ old('password', '')}}" class="form-control">
+        @if(hasErrorFor('password'))
+        <span>
+          {{ getErrorFor('password') }}
+        </span>
+        @endif
+      </div>
+      <button type="submit" class="btn btn-primary">Login</button>
+
+    </form>
+
+  @endsection
+</div>
